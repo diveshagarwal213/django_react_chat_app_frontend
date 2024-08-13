@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+//font-family: "Poppins", sans-serif;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+//root
+:root {
+  --primary: #1976d2;
+  --primary-light: hsla(210, 100%, 63%, 0.5);
+
+  --text-primary: #373d3f;
+  --text-secondary: #cccccc;
+
+  --primary-font-family: "Fredoka", sans-serif;
+  --secondary-font-family: "Roboto", sans-serif;
+
+  --primary-box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),
+    0 1px 2px -1px rgb(0 0 0 / 0.1);
+
+  --whatsapp-green: #25d366;
+  --secondary-gray: #f1f1f6;
+}
+
+//ROOT CLASSES
+.color-whatsapp-green {
+  color: var(--whatsapp-green);
+}
+.bg-secondary-gray {
+  background: var(--secondary-gray);
+}
+//overriding default html css
+body {
+  color: #373d3f;
+  font-family: var(--secondary-font-family);
+}
+
+.primary-font-family {
+  font-family: var(--primary-font-family);
+}
+
+.custom-hr-1 {
+  border: none;
+  height: 1px;
+  color: #333; /* old IE */
+  background-color: #333; /* Modern Browsers */
+}
+.custom-hr-2 {
+  height: 1px;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='grey' stroke-width='1' stroke-dasharray='10' stroke-dashoffset='41' stroke-linecap='round'/%3e%3c/svg%3e");
+}
+
+//hide number field arrows
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+input {
+  caret-color: var(--primary);
+}
+
+// tailwind
+.min-h-dynamic {
+  min-height: 100dvh;
+}
+.h-dynamic {
+  height: 100dvh;
+}
+.w-inherit {
+  width: inherit;
+}
+.h-inherit {
+  height: inherit;
+}
+
+.primary-box-shadow {
+  box-shadow: var(--primary-box-shadow);
+}
+
+.bg-img-poster {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// partner nav
+.partner-nav {
+  &.active {
+    color: var(--primary);
+  }
+}
+
+//partner-main
+.partner_pages_middleware {
+  padding-bottom: 64px;
+  height: 100dvh;
+}
+.partner_pages_main_child {
+  height: 100%;
+  overflow-y: auto;
+}
+.primary-padding {
+  padding: 1.25rem /* 20px */;
+}
+
+// ANIMATIONS
+/* Define the keyframes for the vibrate animation */
+.vibrate_animation {
+  animation: vibrate 0.3s 0.3s ease-in-out;
+  animation-iteration-count: 3;
+}
+
+@keyframes vibrate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    // transform: translateX(-2px);
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .partner_pages_middleware {
+    padding-bottom: 56px;
+  }
+}
