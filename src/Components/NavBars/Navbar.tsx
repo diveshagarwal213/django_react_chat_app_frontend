@@ -1,8 +1,11 @@
 import { AppBar, Button, Toolbar } from "@mui/material"; // styled //Fab //IconButton //Badge
 // import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
 import { NavLink } from "react-router-dom";
-import { PrimaryMoreIcon, PrimaryPowerSettingIcon } from "../../UI/Icons/Icons";
+import {
+  PrimaryMoreIcon,
+  PrimaryPeopleAltIcon,
+  PrimaryPowerSettingIcon,
+} from "../../UI/Icons/Icons";
 import useUserStateHook from "../../hooks/StateHooks/useUserStateHook";
 import { logout } from "../../utils/utils";
 
@@ -39,14 +42,14 @@ function Navbar() {
         >
           <Button color="inherit" aria-label="open drawer">
             <span className="flex flex-col items-center">
-              <GridViewOutlinedIcon />
+              <PrimaryPeopleAltIcon />
               <span className="text-xs">Users</span>
             </span>
           </Button>
         </NavLink>
 
         <NavLink
-          to="./more"
+          to="./my_interests/"
           className={({ isActive, isPending }) =>
             (isPending ? "pending" : isActive ? "active" : "") + " partner-nav"
           }

@@ -11,7 +11,7 @@ const WEBSOCKET_API_BASE_URL =
 type WebsocketResponseT = {
   stream: "notification_stream";
   payload: {
-    message: "UPDATE_INTEREST";
+    message: "UPDATE_INTEREST" | "UPDATE_CHAT";
   };
 };
 
@@ -72,6 +72,9 @@ function Websocket() {
       console.log(lastJsonMessage.payload.message);
       if (lastJsonMessage.payload.message === "UPDATE_INTEREST") {
         queryClient.invalidateQueries([QueryKeyEnums.LIST_USERS]);
+      }
+      if (lastJsonMessage.payload.message === "UPDATE_CHAT") {
+        queryClient.invalidateQueries([QueryKeyEnums.LIST_CHAT_MESSAGES]);
       }
     }
   }, [lastJsonMessage, queryClient]);

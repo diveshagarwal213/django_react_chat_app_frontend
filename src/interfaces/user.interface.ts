@@ -1,4 +1,4 @@
-export type BaseUserInterface = {
+export type BaseUserT = {
   id: number;
   phone_number: string;
   email: string | null;

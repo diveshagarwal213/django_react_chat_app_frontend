@@ -26,6 +26,8 @@ import HistoryOutlinedIcon from "@mui/icons-material/HistoryOutlined";
 import NorthEastOutlinedIcon from "@mui/icons-material/NorthEastOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import SendIcon from "@mui/icons-material/Send";
 export {
   //MUI ICONS
   AddIcon as PrimaryAddIcon,
@@ -55,7 +57,8 @@ export {
   HistoryOutlinedIcon as PrimaryHistoryOutlinedIcon,
   SearchIcon as PrimarySearchIcon,
   PersonAddIcon as PrimaryPersonAddIcon,
-
+  PeopleAltIcon as PrimaryPeopleAltIcon,
+  SendIcon as PrimarySendMessageIcon,
   // react-icons
   FaLeaf as PrimaryPureVegReactIcons,
 };

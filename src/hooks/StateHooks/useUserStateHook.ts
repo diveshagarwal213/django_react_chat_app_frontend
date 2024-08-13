@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { BaseUserInterface } from "../../interfaces/user.interface";
+import { BaseUserT } from "../../interfaces/user.interface";
 import {
   PatchUserPayloadI,
   get_user_me_api_client,
@@ -12,11 +12,9 @@ import {
 import { LocalStorageEnums } from "../../interfaces/global.enums";
 
 interface StateI {
-  user: BaseUserInterface | undefined;
-  sync_user: () => Promise<BaseUserInterface | undefined>;
-  patch_user: (
-    payload: PatchUserPayloadI
-  ) => Promise<BaseUserInterface | undefined>;
+  user: BaseUserT | undefined;
+  sync_user: () => Promise<BaseUserT | undefined>;
+  patch_user: (payload: PatchUserPayloadI) => Promise<BaseUserT | undefined>;
 }
 
 const useUserStateHook = create<StateI>()((set, get) => ({

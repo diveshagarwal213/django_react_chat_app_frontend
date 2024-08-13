@@ -8,6 +8,8 @@ import ErrorComponent from "./pages/others/ErrorComponent";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import PagesMiddleware from "./Middleware/PageMiddlewares/PagesMiddleware";
 import ListUserPage from "./pages/Users/ListUserPage";
+import MyInterests from "./pages/MyInterests/MyInterests";
+import ChatMessages from "./pages/MyInterests/ChatMessages/ChatMessages";
 
 //Lazy pages import example
 // const LazyRestaurant = React.lazy(
@@ -38,7 +40,6 @@ export const routes = createBrowserRouter([
     errorElement: <ErrorComponent />,
     children: [{ path: "login", element: <Login /> }],
   },
-  //Sellers
   {
     path: "main",
     element: <PagesMiddleware />,
@@ -51,6 +52,14 @@ export const routes = createBrowserRouter([
       {
         path: "users",
         element: <ListUserPage />,
+      },
+      {
+        path: "my_interests",
+        element: <MyInterests />,
+      },
+      {
+        path: "my_interests/:interest_id/chats/",
+        element: <ChatMessages />,
       },
     ],
   },

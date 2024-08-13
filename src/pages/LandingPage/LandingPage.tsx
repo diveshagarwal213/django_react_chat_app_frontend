@@ -39,7 +39,7 @@ function LandingPage() {
       <div className="flex-grow flex flex-col justify-around ">
         <div>
           <h1 className="text-5xl font-bold text-center w-full text-primary primary-font-family">
-            My App
+            My Chat App
           </h1>
         </div>
         <div></div>

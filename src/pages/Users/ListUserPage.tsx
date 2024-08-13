@@ -1,7 +1,7 @@
 import { useMemo } from "react";
-import { useListShopProductsApiHook } from "../../hooks/ApiHooks/UserApiHooks/UserApiHook";
+import { useListUserApiHook } from "../../hooks/ApiHooks/UserApiHooks/UserApiHook";
 import { InterestT } from "../../interfaces/interest.interface";
-import { BaseUserInterface } from "../../interfaces/user.interface";
+import { BaseUserT } from "../../interfaces/user.interface";
 import { Button } from "@mui/material";
 import { DeleteIconButton } from "../../UI/Buttons/IconButtons";
 import { PrimaryCheckIcon, PrimaryPersonAddIcon } from "../../UI/Icons/Icons";
@@ -20,7 +20,7 @@ function UserCard({
   handle_action,
   handle_create,
 }: {
-  user: BaseUserInterface;
+  user: BaseUserT;
   sent_to: InterestT | undefined;
   sent_by: InterestT | undefined;
   handle_create: (user_id: number) => void;
@@ -114,7 +114,7 @@ function UserCard({
 
 function ListUserPage() {
   //API Hooks
-  const { data } = useListShopProductsApiHook();
+  const { data } = useListUserApiHook();
   // Mutations
   const { mutate: create_interest } = useCreateInterestApiHook();
   const { mutate: delete_interest } = useDeleteInterestApiHook();

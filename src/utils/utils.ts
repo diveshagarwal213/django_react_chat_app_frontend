@@ -1,14 +1,14 @@
 import { LocalStorageEnums } from "../interfaces/global.enums";
 import { SaveProfileI } from "../interfaces/interface";
 import { ShopT } from "../interfaces/shop.interface";
-import { BaseUserInterface } from "../interfaces/user.interface";
+import { BaseUserT } from "../interfaces/user.interface";
 import { UpdateLocalStorage, getLocalStorage } from "./localStorage.utils";
 
 export function logout() {
   const refresh_token = localStorage.getItem(
     LocalStorageEnums.REFRESH_TOKEN
   ) as string;
-  const user = getLocalStorage<BaseUserInterface>(LocalStorageEnums.USER);
+  const user = getLocalStorage<BaseUserT>(LocalStorageEnums.USER);
   const shop = getLocalStorage<ShopT>(LocalStorageEnums.SHOP);
   let text;
   if (shop) text = shop.name;
