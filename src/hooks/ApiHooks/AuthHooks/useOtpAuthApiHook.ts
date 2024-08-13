@@ -2,6 +2,7 @@ import { useMutation } from "@tanstack/react-query";
 import get_axios_client from "../../../lib/axios/axios.lib";
 import { LocalStorageEnums } from "../../../interfaces/global.enums";
 import { useNavigate } from "react-router-dom";
+import useUserStateHook from "../../StateHooks/useUserStateHook";
 
 interface PayloadI {
   phone_number: string | number;
@@ -34,9 +35,11 @@ function gen_otp_api_client({ redirect, ...data }: PayloadI) {
 
 function useOtpAuthApiHook() {
   const navigate = useNavigate();
+  const sync_user = useUserStateHook((state) => state.sync_user);
   return useMutation(gen_otp_api_client, {
     onSuccess: (_, payload) => {
       navigate(payload.redirect || "/main/users/");
+      sync_user();
     },
   });
 }

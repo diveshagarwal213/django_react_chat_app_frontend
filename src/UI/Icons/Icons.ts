@@ -25,6 +25,7 @@ import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsAc
 import HistoryOutlinedIcon from "@mui/icons-material/HistoryOutlined";
 import NorthEastOutlinedIcon from "@mui/icons-material/NorthEastOutlined";
 import SearchIcon from "@mui/icons-material/Search";
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
 export {
   //MUI ICONS
   AddIcon as PrimaryAddIcon,
@@ -53,6 +54,7 @@ export {
   NotificationsActiveOutlinedIcon as PrimaryActiveNotification,
   HistoryOutlinedIcon as PrimaryHistoryOutlinedIcon,
   SearchIcon as PrimarySearchIcon,
+  PersonAddIcon as PrimaryPersonAddIcon,
 
   // react-icons
   FaLeaf as PrimaryPureVegReactIcons,

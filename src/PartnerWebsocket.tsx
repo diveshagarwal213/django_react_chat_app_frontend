@@ -3,6 +3,7 @@ import useWebSocket, { ReadyState } from "react-use-websocket";
 import { getAccessTokenFromRefresh } from "./lib/axios/axios.lib";
 import { LocalStorageEnums } from "./interfaces/global.enums";
 import { useQueryClient } from "@tanstack/react-query";
+import { QueryKeyEnums } from "./interfaces/query.enums";
 
 const WEBSOCKET_API_BASE_URL =
   import.meta.env.VITE_WEBSOCKET_API_BASE_URL + "/ws/";
@@ -10,7 +11,7 @@ const WEBSOCKET_API_BASE_URL =
 type WebsocketResponseT = {
   stream: "notification_stream";
   payload: {
-    message: "FETCH_NEW_ORDERS";
+    message: "UPDATE_INTEREST";
   };
 };
 
@@ -69,8 +70,8 @@ function Websocket() {
     if (lastJsonMessage !== null) {
       console.log(lastJsonMessage.stream);
       console.log(lastJsonMessage.payload.message);
-      if (lastJsonMessage.payload.message === "FETCH_NEW_ORDERS") {
-        // queryClient.invalidateQueries([QueryKeyEnums.LIST_ORDERS_BY_TYPE]);
+      if (lastJsonMessage.payload.message === "UPDATE_INTEREST") {
+        queryClient.invalidateQueries([QueryKeyEnums.LIST_USERS]);
       }
     }
   }, [lastJsonMessage, queryClient]);

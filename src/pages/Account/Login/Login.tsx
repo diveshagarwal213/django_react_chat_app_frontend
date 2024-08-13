@@ -11,7 +11,7 @@ import { form_error_handler } from "../../../utils/errors/error.utils";
 import { BasicButton } from "../../../UI/Buttons/CustomButton";
 
 type FormValues = {
-  phone_number: number;
+  phone_number: string;
   otp: string;
 };
 
@@ -42,6 +42,7 @@ export default function Login() {
     setFocus,
     setError,
     resetField,
+    setValue,
   } = useForm<FormValues>();
   // resolver: yupResolver(formSchema),
 
@@ -212,6 +213,32 @@ export default function Login() {
             >
               Get OTP
             </BasicButton>
+          )}
+          {!isSecondStep && (
+            <div className="my-5 flex flex-col gap-1">
+              <BasicButton
+                onClick={() => {
+                  setValue("phone_number", "8474964282");
+                }}
+                type="button"
+                size="small"
+                variant="outlined"
+                fullWidth
+              >
+                Login as 'Chen Wang'
+              </BasicButton>
+              <BasicButton
+                onClick={() => {
+                  setValue("phone_number", "7809772989");
+                }}
+                type="button"
+                size="small"
+                variant="outlined"
+                fullWidth
+              >
+                Login as 'Alice Smith'
+              </BasicButton>
+            </div>
           )}
           {isSecondStep && (
             <BasicButton

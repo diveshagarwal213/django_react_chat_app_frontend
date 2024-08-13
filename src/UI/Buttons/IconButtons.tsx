@@ -11,6 +11,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import {
   PrimaryActiveNotification,
+  PrimaryCheckIcon,
   PrimaryEditIcon,
   PrimaryHistoryOutlinedIcon,
   PrimaryNoNotification,
@@ -55,6 +56,13 @@ export function EditIconButton(props: IconButtonProps) {
   return (
     <IconButton title="Edit" {...props}>
       <PrimaryEditIcon />
+    </IconButton>
+  );
+}
+export function AcceptIconButton(props: IconButtonProps) {
+  return (
+    <IconButton title="Accept" {...props}>
+      <PrimaryCheckIcon />
     </IconButton>
   );
 }

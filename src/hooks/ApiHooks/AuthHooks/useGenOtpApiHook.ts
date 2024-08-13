@@ -22,7 +22,7 @@ function useGenOtpApiHook() {
     onSuccess: (data) => {
       if (!data.data.raw_otp) return;
       toast.success(data.data.raw_otp, {
-        duration: 10000,
+        duration: 5000,
         position: "top-center",
       });
     },

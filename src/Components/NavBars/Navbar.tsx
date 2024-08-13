@@ -2,9 +2,12 @@ import { AppBar, Button, Toolbar } from "@mui/material"; // styled //Fab //IconB
 // import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
 import { NavLink } from "react-router-dom";
-import { PrimaryMoreIcon } from "../../UI/Icons/Icons";
+import { PrimaryMoreIcon, PrimaryPowerSettingIcon } from "../../UI/Icons/Icons";
+import useUserStateHook from "../../hooks/StateHooks/useUserStateHook";
+import { logout } from "../../utils/utils";
 
 function Navbar() {
+  const user = useUserStateHook((state) => state.user);
   return (
     <AppBar
       position="fixed"
@@ -19,6 +22,15 @@ function Navbar() {
           justifyContent: "space-evenly",
         }}
       >
+        <Button
+          variant="text"
+          title="Logout"
+          color="warning"
+          onClick={logout}
+          endIcon={<PrimaryPowerSettingIcon />}
+        >
+          <span>{user?.first_name || user?.phone_number}</span>
+        </Button>
         <NavLink
           to="./users"
           className={({ isActive, isPending }) =>
