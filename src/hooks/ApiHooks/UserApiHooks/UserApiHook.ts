@@ -1,6 +1,5 @@
 import get_axios_client from "../../../lib/axios/axios.lib";
 import { BaseUserT } from "../../../interfaces/user.interface";
-import { DefaultPaginationType } from "../../../interfaces/interface";
 import { useQuery } from "@tanstack/react-query";
 import { QueryKeyEnums } from "../../../interfaces/query.enums";
 import { InterestT } from "../../../interfaces/interest.interface";

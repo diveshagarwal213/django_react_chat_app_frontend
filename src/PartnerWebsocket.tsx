@@ -16,10 +16,6 @@ type WebsocketResponseT = {
 };
 
 function Websocket() {
-  //states
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  // const [, setMessageHistory] = useState<WebsocketResponseT[]>([]);
-
   //react-query
   const queryClient = useQueryClient();
 

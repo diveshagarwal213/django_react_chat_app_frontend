@@ -41,6 +41,8 @@ function LandingPage() {
           <h1 className="text-5xl font-bold text-center w-full text-primary primary-font-family">
             My Chat App
           </h1>
+          <br />
+          <p className="text-sm text-gray-400"> created by Divesh Aggarwal </p>
         </div>
         <div></div>
       </div>
